@@ -33,6 +33,7 @@ bool isBalancedBrackets(const string& input)
             // Check to make sure the stack has content before checking top
             if (!st.empty())
             {
+                // Make sure the brackets are balanced
                 if ((st.top() == '{' && ch == '}') ||
                     (st.top() == '[' && ch == ']') ||
                     (st.top() == '(' && ch == ')'))
