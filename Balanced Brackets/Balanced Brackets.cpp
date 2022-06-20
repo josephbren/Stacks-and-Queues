@@ -39,14 +39,12 @@ bool isBalancedBrackets(const string& input)
                     (st.top() == '(' && ch == ')'))
                 {
                     st.pop();
-                }
-                else
-                {
-                    // Unbalanced bracket found
-                    return false;
+                    break;
                 }
             }
-            break;
+            // Unbalanced bracket found
+
+            return false;
         }
     }
 
@@ -60,4 +58,5 @@ int main()
     cout << "{[()]} isBalanced :" << isBalancedBrackets("{[()]}") << endl;  // bracket balanced
     cout << "{a()]} isBalanced :" << isBalancedBrackets("{a()]}") << endl;  // a is ignored but brackets are not properly balanced
     cout << "{[a()]} isBalanced :" << isBalancedBrackets("{[a()]}") << endl;  // a is ignored, brackets are properly balanced
+    cout << "] isBalanced :" << isBalancedBrackets("]") << endl;  // a is ignored, brackets are properly balanced
 }
